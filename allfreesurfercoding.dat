@@ -1,0 +1,63 @@
+#Set Freesurfer home directory in bash shell
+export FREESURFER_HOME=/Applications/freesurfer/
+source $FREESURFER_HOME/SetUpFreeSurfer.sh
+
+#Set subject directory
+setenv SUBJECTS_DIR /Users/csfinuf/Desktop/freesurfer
+echo $SUBJECTS_DIR
+
+#ERROR: FreeSurfer license file /Applications/freesurfer//license.txt not found.
+#To fix this error rename "LICENSE" file to license.txt and place in "freesurfer" folder.
+[byu321451wks:~/Desktop] csfinuf% recon-all -i /Users/csfinuf/Desktop/freesurfer/t1_fl3d_sag_p4_iso_10_2avg_3/IM-0001-0001.dcm -subjid 001
+
+#Make sure to have a volume called 001.mgz in  /Users/csfinuf/Desktop/freesurfer/orig/mri/orig.
+[byu321451wks:~/Desktop] csfinuf% recon-all -s freesurfer/001/mri/orig/ -all
+
+
+vi ./bash_profile
+
+
+#1/22/16
+#Set subject directory
+setenv SUBJECTS_DIR /Users/csfinuf/Desktop/freesurfer/UCSD
+echo $SUBJECTS_DIR
+
+#ERROR: FreeSurfer license file /Applications/freesurfer//.license not found.
+#move license file into Freesurfer home
+byu321451wks:freesurfer csfinuf$ cp license.txt /Users/csfinuf/Desktop/
+byu321451wks:freesurfer csfinuf$ cd /Users/csfinuf/Desktop/
+byu321451wks:Desktop csfinuf$ mv license.txt /Applications/freesurfer/.license
+
+
+
+#Making edits in tkmedit
+tkmedit sd_259--2015-05-26 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_263--2015-05-20 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_265--2015-05-20 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_270--2015-07-28 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_271--2015-06-15 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_272--2015-06-09 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_275--2015-06-09 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_276--2015-06-12 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_278--2015-07-22 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_279--2015-07-22 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_280--2015-07-20 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_281--2015-06-26 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_282--2015-07-20 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_283--2015-08-28 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_284--2015-07-20 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_287--2015-08-10 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_288--2015-08-28 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_291--2015-08-19 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_294--2015-09-17 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_295--2015-09-24 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_296--2015-09-18 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_299--2015-10-14 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_305--2015-10-28 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_306--2015-10-27 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_307--2015-12-22 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_308--2015-11-10 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_309--2015-12-11 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_312--2015-12-11 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_313--2015-12-03 brainmask.mgz -aux wm.mgz -surfs
+tkmedit sd_314--2015-11-24 brainmask.mgz -aux wm.mgz -surfs
